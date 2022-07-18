@@ -1,9 +1,14 @@
 import json
 
 
+def get_data_file(filepath):
+    with open(filepath) as file:
+        return json.load(file)
+
+
 def generate_diff(file_path1, file_path2):
-    file1 = json.load(open(file_path1))
-    file2 = json.load(open(file_path2))
+    file1 = get_data_file(file_path1)
+    file2 = get_data_file(file_path2)
     diff_data = {}
     keys = list(set(file1.keys()) | set(file2.keys()))
     keys.sort()
@@ -21,4 +26,3 @@ def generate_diff(file_path1, file_path2):
 
     result = json.dumps(diff_data, indent=2, separators=('', ': '))
     return result.replace('"', "")
-
