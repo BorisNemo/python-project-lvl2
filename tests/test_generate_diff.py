@@ -12,6 +12,6 @@ def data():
 
 def test_generate_diff(data):
     file1, file2 = data
-    with open("tests/fixtures/output/file1_fil2_diff.txt") as text:
+    with open("tests/fixtures/output/file1_file2_json_diff.txt") as text:
         diff_result = text.read()
     assert generate_diff(file1, file2) == diff_result
