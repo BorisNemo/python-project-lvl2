@@ -1,12 +1,15 @@
 import json
 
+from gendiff.core.parse_content import parse_content
+
 
 def get_data_file(filepath):
     with open(filepath) as file:
-        return json.load(file)
+        return parse_content(file.read())
 
 
 def generate_diff(file_path1, file_path2):
+
     file1 = get_data_file(file_path1)
     file2 = get_data_file(file_path2)
     diff_data = {}

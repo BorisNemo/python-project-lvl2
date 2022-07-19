@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from gendiff.cli import args
-from gendiff.generate_diff import generate_diff
+from gendiff.core.cli import args
+from gendiff.core.generate_diff import generate_diff
 
 
 def main():
